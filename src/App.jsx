@@ -38,7 +38,7 @@ function lineTotal(product, qty) {
 function buildMessage({ name, address, note, lines, total }) {
   const items = lines.map((l) => `• ${l.product.name} x${l.qty} = ${rupiah(l.subtotal)}`).join('\n');
   return [
-    'Halo Pempek Kia, saya mau pesan:',
+    'Halo IR Frozen Food, saya mau pesan:',
     '',
     '*Pesanan*',
     items,
@@ -178,7 +178,7 @@ export default function App() {
           <a href="#top" className="brand">
             <img src="./images/logo.webp" alt="" width="44" height="44" />
             <span>
-              Pempek <b>Kia</b>
+              <b>IR</b> Frozen Food
             </span>
           </a>
           <nav className="nav-links" aria-label="Navigasi utama">
@@ -219,7 +219,7 @@ export default function App() {
               </ul>
             </div>
             <div className="hero-logo">
-              <img src="./images/logo.webp" alt="Logo Pempek Kia" width="900" height="900" />
+              <img src="./images/logo.webp" alt="Logo IR Frozen Food" width="900" height="900" />
             </div>
           </div>
         </section>
@@ -355,16 +355,16 @@ export default function App() {
 
       <footer className="footer">
         <div className="container footer-inner">
-          <img src="./images/logo-alt.webp" alt="Pempek dan Tekwan Kia" width="150" height="150" loading="lazy" />
+          <img src="./images/logo.webp" alt="" width="120" height="120" loading="lazy" />
           <div>
-            <p className="footer-brand">Pempek &amp; Tekwan Kia</p>
-            <p>Frozen product, asli ikan tenggiri.</p>
+            <p className="footer-brand">IR Frozen Food</p>
+            <p>Pempek &amp; tekwan frozen, asli ikan tenggiri.</p>
             <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener noreferrer" className="footer-wa">
               <WhatsAppIcon /> {WHATSAPP_DISPLAY}
             </a>
           </div>
         </div>
-        <p className="copyright">© {new Date().getFullYear()} Pempek Kia</p>
+        <p className="copyright">© {new Date().getFullYear()} IR Frozen Food</p>
       </footer>
 
       {count > 0 && (

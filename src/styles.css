@@ -1,20 +1,20 @@
 :root {
-  --cream: #ebdabf; /* sama dengan latar logo */
-  --cream-soft: #f7eedd;
-  --paper: #fffaf1;
-  --terracotta: #c9573f;
-  --terracotta-dark: #a8432e;
-  --navy: #1d4354;
-  --mustard: #e09b3d;
-  --green: #7fa650;
-  --green-dark: #5f8436;
+  --cream: #f6efe0; /* sama dengan latar logo */
+  --cream-soft: #f1ecd9;
+  --paper: #fdfaf2;
+  --sage: #a3ab7e; /* hijau cincin logo */
+  --primary: #5f6f3e;
+  --primary-dark: #4b5930;
+  --ink: #6b4334; /* cokelat tulisan logo */
+  --mustard: #d9983c;
+  --green-dark: #55682f;
   --wa: #1faa59;
   --wa-dark: #178a47;
-  --text: #2b3a41;
-  --muted: #6d756f;
-  --line: #e6d6ba;
+  --text: #3d362f;
+  --muted: #746c5f;
+  --line: #e4dcc3;
   --radius: 20px;
-  --shadow: 0 10px 30px rgba(29, 67, 84, 0.1);
+  --shadow: 0 10px 30px rgba(75, 60, 40, 0.1);
 }
 
 * {
@@ -50,7 +50,7 @@ p {
 h1,
 h2,
 h3 {
-  color: var(--navy);
+  color: var(--ink);
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
@@ -85,6 +85,7 @@ a {
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
+  white-space: nowrap;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
 }
 
@@ -102,22 +103,22 @@ a {
 }
 
 .btn-primary {
-  background: var(--terracotta);
+  background: var(--primary);
   color: #fff;
-  box-shadow: 0 6px 16px rgba(201, 87, 63, 0.3);
+  box-shadow: 0 6px 16px rgba(95, 111, 62, 0.3);
 }
 
 .btn-primary:hover {
-  background: var(--terracotta-dark);
+  background: var(--primary-dark);
 }
 
 .btn-ghost {
-  border-color: var(--navy);
-  color: var(--navy);
+  border-color: var(--ink);
+  color: var(--ink);
 }
 
 .btn-ghost:hover {
-  background: var(--navy);
+  background: var(--ink);
   color: #fff;
 }
 
@@ -141,7 +142,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(235, 218, 191, 0.92);
+  background: rgba(246, 239, 224, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -158,15 +159,15 @@ a {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  font-family: 'Pacifico', cursive;
-  font-size: 1.35rem;
-  color: var(--terracotta);
+  font-family: 'Lobster', cursive;
+  font-size: 1.4rem;
+  color: var(--ink);
   margin-right: auto;
 }
 
 .brand b {
   font-weight: 400;
-  color: var(--navy);
+  color: var(--primary);
 }
 
 .brand img {
@@ -182,11 +183,11 @@ a {
 .nav-links a {
   text-decoration: none;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--ink);
 }
 
 .nav-links a:hover {
-  color: var(--terracotta);
+  color: var(--primary);
 }
 
 .count {
@@ -197,7 +198,7 @@ a {
   padding: 0 6px;
   border-radius: 999px;
   background: #fff;
-  color: var(--terracotta);
+  color: var(--primary);
   font-size: 0.8rem;
 }
 
@@ -224,8 +225,8 @@ a {
 }
 
 .chip-frozen {
-  background: #d9ecf5;
-  color: #1c6c94;
+  background: #e3e8d1;
+  color: var(--primary-dark);
 }
 
 .hero h1 {
@@ -237,10 +238,10 @@ a {
 .script {
   display: block;
   margin-top: 6px;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Lobster', cursive;
   font-weight: 400;
   font-size: 0.72em;
-  color: var(--terracotta);
+  color: var(--primary);
   letter-spacing: 0;
 }
 
@@ -265,7 +266,7 @@ a {
   padding: 0;
   list-style: none;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--ink);
 }
 
 .hero-points li::before {
@@ -279,10 +280,8 @@ a {
   width: min(480px, 100%);
   height: auto;
   margin-inline: auto;
-  border-radius: 36px;
-  border: 6px solid #fff;
-  box-shadow: 0 24px 50px rgba(29, 67, 84, 0.22);
-  transform: rotate(2deg);
+  border-radius: 50%;
+  box-shadow: 0 24px 50px rgba(75, 60, 40, 0.2);
 }
 
 /* ---------- Section ---------- */
@@ -295,9 +294,9 @@ a {
 }
 
 .eyebrow {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Lobster', cursive;
   font-size: 1.2rem;
-  color: var(--terracotta);
+  color: var(--primary);
 }
 
 .section h2 {
@@ -352,7 +351,7 @@ a {
   width: 68px;
   height: 68px;
   border-radius: 50%;
-  background: var(--terracotta);
+  background: var(--primary);
   color: #fff;
   font-size: 1.3rem;
   font-weight: 800;
@@ -403,8 +402,8 @@ a {
   margin-top: 18px;
   padding: 10px 14px;
   border-radius: 12px;
-  background: #edf4e2;
-  color: #47652a;
+  background: #eaeedb;
+  color: var(--primary-dark);
   font-weight: 700;
   font-size: 0.95rem;
 }
@@ -419,10 +418,14 @@ a {
   min-height: 68px;
 }
 
+.card-buy > div:first-child {
+  white-space: nowrap;
+}
+
 .price {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--terracotta);
+  color: var(--primary);
 }
 
 .hint {
@@ -436,7 +439,7 @@ a {
 .stepper {
   display: inline-flex;
   align-items: center;
-  border: 2px solid var(--navy);
+  border: 2px solid var(--ink);
   border-radius: 999px;
   background: #fff;
   flex-shrink: 0;
@@ -452,7 +455,7 @@ a {
   font-size: 1.3rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--navy);
+  color: var(--ink);
   cursor: pointer;
 }
 
@@ -538,7 +541,7 @@ label {
   margin-top: 18px;
   margin-bottom: 6px;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--ink);
 }
 
 label .muted {
@@ -560,8 +563,8 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--terracotta);
-  box-shadow: 0 0 0 3px rgba(201, 87, 63, 0.18);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(95, 111, 62, 0.18);
 }
 
 [aria-invalid='true'] {
@@ -623,7 +626,7 @@ textarea:focus {
 .total {
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--ink);
 }
 
 .summary .small {
@@ -632,8 +635,8 @@ textarea:focus {
 
 /* ---------- Footer ---------- */
 .footer {
-  background: var(--navy);
-  color: #dbe6ea;
+  background: var(--ink);
+  color: #eee3d6;
   padding-block: 44px 110px;
 }
 
@@ -644,15 +647,16 @@ textarea:focus {
 }
 
 .footer-inner img {
-  width: 130px;
-  height: 130px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15);
   object-fit: cover;
   flex-shrink: 0;
 }
 
 .footer-brand {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Lobster', cursive;
   font-size: 1.5rem;
   color: #fff;
 }
@@ -691,17 +695,17 @@ textarea:focus {
   width: min(460px, 100% - 32px);
   padding: 14px 22px;
   border-radius: 999px;
-  background: var(--navy);
+  background: var(--ink);
   color: #fff;
   text-decoration: none;
-  box-shadow: 0 12px 30px rgba(29, 67, 84, 0.4);
+  box-shadow: 0 12px 30px rgba(75, 60, 40, 0.4);
   transform: translateX(-50%);
   animation: rise 0.25s ease-out;
 }
 
 .cart-bar-cta {
   font-weight: 700;
-  color: #ffd08a;
+  color: #f3cf8f;
   white-space: nowrap;
 }
 

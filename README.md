@@ -1,6 +1,6 @@
-# Pempek & Tekwan Kia
+# IR Frozen Food
 
-Website satu halaman untuk toko Pempek & Tekwan Kia. Pembeli memilih produk, mengisi nama dan alamat, lalu pesanan dikirim lewat WhatsApp. Tanpa backend, di-hosting di GitHub Pages.
+Website satu halaman untuk toko IR Frozen Food (pempek & tekwan). Pembeli memilih produk, mengisi nama dan alamat, lalu pesanan dikirim lewat WhatsApp. Tanpa backend, di-hosting di GitHub Pages.
 
 ## Menjalankan di komputer
 
