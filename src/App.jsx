@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 
 // ====== Data toko — ubah di sini kalau harga / nomor berubah ======
-const WHATSAPP = '628988671476'; // 0898-8671-476 dalam format internasional
-const WHATSAPP_DISPLAY = '0898-8671-476';
+const WHATSAPP = '6288220563194'; // 0882-2056-3194 dalam format internasional
+const WHATSAPP_DISPLAY = '0882-2056-3194';
 const PROMO_MIN = 3; // beli kelipatan 3 dapat harga promo
 
 const PRODUCTS = [
