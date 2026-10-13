@@ -24,6 +24,15 @@ const PRODUCTS = [
     promoPrice: 23000,
     contents: ['Tekwan', 'Soun', 'Sedap malam', 'Jamur kuping', 'Bengkoang', 'Bumbu kuah', 'Sambal'],
   },
+  {
+    id: 'mix',
+    name: 'Paket Mix',
+    tagline: 'Pempek dan tekwan sekaligus dalam satu paket hemat.',
+    image: './images/mix.webp',
+    price: 60000,
+    contents: ['2 paket pempek', '1 paket tekwan'],
+    note: 'Hemat Rp11.000 dibanding beli satuan',
+  },
 ];
 
 const rupiah = (n) => 'Rp' + n.toLocaleString('id-ID');
@@ -31,6 +40,7 @@ const shortPrice = (n) => n / 1000 + 'K';
 
 // Potongan harga berlaku kelipatan: setiap 3 pcs dihitung harga promo, sisanya harga normal.
 function lineTotal(product, qty) {
+  if (!product.promoPrice) return product.price * qty;
   const promoQty = Math.floor(qty / PROMO_MIN) * PROMO_MIN;
   return promoQty * product.promoPrice + (qty - promoQty) * product.price;
 }
@@ -93,12 +103,14 @@ function ProductCard({ product, qty, onChange }) {
           ))}
         </ul>
         <p className="promo-pill">
-          Beli {PROMO_MIN} pcs, harga satuan jadi {shortPrice(product.promoPrice)}
+          {product.promoPrice
+            ? `Beli ${PROMO_MIN} pcs, harga satuan jadi ${shortPrice(product.promoPrice)}`
+            : product.note}
         </p>
         <div className="card-buy">
           <div>
             <span className="price">{rupiah(product.price)}</span>
-            <span className="muted"> / paket</span>
+            <span className="muted small">per paket</span>
           </div>
           {qty === 0 ? (
             <button type="button" className="btn btn-primary" onClick={() => onChange(1)}>
@@ -108,7 +120,7 @@ function ProductCard({ product, qty, onChange }) {
             <Stepper qty={qty} onChange={onChange} label={product.name} />
           )}
         </div>
-        {qty > 0 && (
+        {qty > 0 && product.promoPrice && (
           <p className="hint">
             {qty % PROMO_MIN === 0
               ? `Harga promo aktif: ${rupiah(lineTotal(product, qty))}`
@@ -121,7 +133,7 @@ function ProductCard({ product, qty, onChange }) {
 }
 
 export default function App() {
-  const [cart, setCart] = useState({ pempek: 0, tekwan: 0 });
+  const [cart, setCart] = useState(() => Object.fromEntries(PRODUCTS.map((p) => [p.id, 0])));
   const [form, setForm] = useState({ name: '', address: '', note: '' });
   const [errors, setErrors] = useState({});
 
@@ -229,7 +241,7 @@ export default function App() {
             <p className="eyebrow">Menu</p>
             <h2>Pilih paket favoritmu</h2>
             <p className="section-sub">
-              Potongan harga berlaku kelipatan {PROMO_MIN} pcs untuk tiap produk.
+              Potongan harga berlaku kelipatan {PROMO_MIN} pcs untuk pempek dan tekwan satuan.
             </p>
             {errors.cart && (
               <p className="error error-banner" role="alert">
@@ -252,7 +264,7 @@ export default function App() {
               <li>
                 <span className="step-num">1</span>
                 <h3>Pilih produk</h3>
-                <p>Tentukan jumlah pempek dan tekwan yang kamu mau.</p>
+                <p>Tentukan jumlah pempek, tekwan, atau paket mix yang kamu mau.</p>
               </li>
               <li>
                 <span className="step-num">2</span>
